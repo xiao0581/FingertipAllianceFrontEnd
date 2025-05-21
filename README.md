@@ -1,23 +1,23 @@
 # FingertipAllianceFrontEnd
 
-## 项目技术
+## Project Stack
 Vue3 + Vite + TypeScript + ...
 
-## 两个端：
-1. FingertipAllianceFrontEnd: 前端
-2. FingertipAllianceServer: 后端(Node+Express+MySQL,目的就是提供数据)
+## Two Modules:
+1. FingertipAllianceFrontEnd: Frontend
+2. FingertipAllianceServer: Backend (Node + Express + MySQL, purpose is to provide data)
 
-## 项目环境搭建
-- 工具链: npm create vue@latest
-- 安装依赖
+## Project Setup
+- Toolchain: npm create vue@latest
+- Install dependencies:
     - axios
     - less less-loader
     - vant
 
 
-### vant UI组件库按需加载
-- 安装依赖: `npm i @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D`
-- 修改`vite.config.ts`文件
+### Vant UI Component Library 
+- Install dependencies: `npm i @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D`
+- Modify `vite.config.ts`
 ```
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
@@ -44,8 +44,8 @@ export default defineConfig({
 })
 ```
 
-## Vue2和Vue3的模板
-设置 - 用户设置 - 搜索vue.json 修改
+## Vue 2 and Vue 3 
+Go to: Settings → User Settings → Search vue.json, and add or edit:
 ```
 {
 	"vue3": {
@@ -65,7 +65,7 @@ export default defineConfig({
 			"</style>",
 			""
 		],
-		"description": "快速创建vue3模板"
+		"description": "Quickly create a Vue 3 template"
 	},
 	"vue2": {
 		"prefix": "vue2",
@@ -83,29 +83,35 @@ export default defineConfig({
 			"</style>",
 			""
 		],
-		"description": "快速创建vue2模板"
+		"description": "Quickly create a Vue 2 template"
 	}
 }
 ```
 
 
-## 本地存储持久化
-1. 安装依赖：npm install --save pinia-plugin-persist
-2. 使用依赖
+## Local Storage Persistence
+1. Install dependency:npm install --save pinia-plugin-persist
+2. Use the plugin accordingly in your store setup
 
-## 跨域问题
-1. 跨域产生的原因：JS不允许同源策略：端口、域名、协议不同，都会引起跨域
-2. 解决方案
-	- 后端：cors
-	- 前端：proxy代理  参考vite.config.ts文件
-3. 开发环境与生产环境
-	- 后端解决可以用于生产环境
-	- 前端解决，只能用于开发环境，如果是生产环境，还需要额外处理
+## CORS (Cross-Origin Resource Sharing)
+1. Reason for CORS issues:
+JavaScript enforces the same-origin policy – different ports, domains, or protocols cause cross-origin issues.
+2.Solutions:
+
+Backend: Use cors module
+
+Frontend: Use proxy settings (configured in vite.config.ts)
+3. Environment differences:
+
+Backend solutions work in both development and production
+
+Frontend proxy only works during development; production needs other solutions
 
 
-## 关于token
-参考网址：https://ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html
+## About Token (JWT)
+Refer to this tutorial:
+https://ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html
 
 
-## 支付宝支付：
-大家需要在手机上安装一个支付宝沙箱
+## Alipay Integration
+Everyone needs to install the Alipay Sandbox App on their mobile phone.
